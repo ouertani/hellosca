@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <parent>
+        <artifactId>sca</artifactId>
+        <groupId>com.jtunisie.osgi</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.jtunisie.osgi.sca</groupId>
+    <artifactId>api</artifactId>
+    <name>api</name>
+    <version>1.0.0</version>
+    <url>http://www.jroller.com/ouertani</url>
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Export-Package>com.jtunisie.osgi.sca</Export-Package>
+                        <Bundle-SymbolicName>${pom.name}-${pom.version}</Bundle-SymbolicName>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+
+</project>
