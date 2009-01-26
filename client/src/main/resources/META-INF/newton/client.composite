@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite name="service_test"
+           xmlns:sdm="http://newton.cauldron.org/springdm">
+
+    <reference name="service_ref_rmi" multiplicity="0..1">
+        <interface.java  interface="com.jtunisie.osgi.sca.IService" />
+        <binding.rmi/>
+    </reference>
+    <component name="serv_test">
+        <description>spring configuration</description>
+        <reference name="service_cons" />
+        <sdm:implementation.spring />
+    </component>
+
+    <wire>
+        <source.uri>serv_test/service_cons</source.uri>
+        <target.uri>service_ref_rmi</target.uri>
+    </wire>
+
+</composite>
+

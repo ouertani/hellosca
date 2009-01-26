@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<composite name="sca_service"
+           xmlns:sdm="http://newton.cauldron.org/springdm">.
+    <service name="sca_service_rmi" >
+        <interface.java interface="com.jtunisie.osgi.sca.IService"></interface.java>
+        <binding.rmi/>
+    </service>
+    <service name="sca_service_osgi" >
+        <interface.java interface="com.jtunisie.osgi.sca.IService"></interface.java>
+        <binding.osgi/>
+    </service>
+    <component name="srv">
+        <description>spring configuration</description>
+        <service name="sca_service" />
+        <sdm:implementation.spring />
+    </component>
+    <wire>
+        <source.uri>sca_service_rmi</source.uri>
+        <target.uri>srv/sca_service</target.uri>
+     </wire>
+        <wire>
+        <source.uri>sca_service_osgi</source.uri>
+        <target.uri>srv/sca_service</target.uri>
+    </wire>
+</composite>
